@@ -1,47 +1,5 @@
-# Next.js with WebAssembly
+# Deployment with Vercel
 
-[![StandWithUkraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://github.com/vshymanskyy/StandWithUkraine/blob/main/docs/README.md)
+For deployment with vercel, the wasm-rust files cannot, to my knowledge, be generated during the build process, which would require a rust environment not provided by vercel. To get around this, we will track the generated wasm files in git and point our source code to the already generated files during vercel's build phase.
 
-[Next.js](https://nextjs.org/)-based web application template with [WebAssembly](https://webassembly.org/) module written in [Rust](https://www.rust-lang.org/) programming language.
-
-## Try in [Gitpod](https://www.gitpod.io/)
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/satelllte/nextjs-wasm)
-
-## Try in [GitHub Codespaces](https://github.com/features/codespaces)
-
-[![Open in Remote - Containers](https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode)](https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/satelllte/nextjs-wasm)
-
-## Prerequisites
-
-- [NodeJS](https://nodejs.org/) | recommended version: `>= 16`
-- [Rust & Cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html) | recommended version: `>= 1.61`
-
-## Getting Started
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Compile WebAssembly:
-
-```bash
-npm run build:wasm
-```
-
-Run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Build for Production
-
-```bash
-npm run build:wasm # if wasn't built yet
-npm run build
-```
+This does carry a downside of requiring us to manually build and commit the generated files as needed rather than having these produced automatically via the build process.

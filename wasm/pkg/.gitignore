@@ -1,5 +1,4 @@
-/target
-# /pkg
+# *
 # NOTE: wasm/pkg will be tracked by git so the generated wasm files
 # can be referenced during vercel's build phase
 # without requiring a rust runtime environment
