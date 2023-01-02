@@ -68,6 +68,13 @@ export const prismThemes = {
   tomorrow,
 };
 
+export type PrismTheme = keyof typeof prismThemes;
+export const prismThemeKeys = Object.keys(prismThemes) as PrismTheme[];
+export type PrismLanguage = keyof typeof languageParsers;
+export const prismLanguageKeys = Object.keys(
+  languageParsers
+) as PrismLanguage[];
+
 export interface Sample {
   language: keyof typeof languageParsers;
   code: string;
