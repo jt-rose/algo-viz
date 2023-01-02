@@ -1,7 +1,8 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import { WASMExample } from '../components/WASMExample'
+import type { NextPage } from "next";
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import { WASMExample } from "../components/WASMExample";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -13,16 +14,17 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <Link href="/binary-search">binary search</Link>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js</a> with WebAssembly!
         </h1>
 
         <div className={styles.wasm}>
-          <WASMExample/>
+          <WASMExample />
         </div>
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
